@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://entities/bridge_builder/bridge_builder.gd" type="Script" id=1]
+[ext_resource path="res://entities/pressure_button/pressure_button.tscn" type="PackedScene" id=2]
+
+[node name="bridge_builder" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="pressure_button" parent="." instance=ExtResource( 2 )]

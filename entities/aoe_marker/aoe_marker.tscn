@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://AOE.png" type="Texture" id=1]
+[ext_resource path="res://entities/aoe_marker/aoe_marker.gd" type="Script" id=2]
+[ext_resource path="res://entities/aoe_marker/call_collider.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.7904
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 80.0
+
+[node name="aoe_marker" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="corpse_collider" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 12
+
+[node name="shape" type="CollisionShape2D" parent="corpse_collider"]
+shape = SubResource( 1 )
+
+[node name="call_collider" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource( 3 )
+
+[node name="shape" type="CollisionShape2D" parent="call_collider"]
+modulate = Color( 0.435294, 0, 0, 1 )
+shape = SubResource( 2 )

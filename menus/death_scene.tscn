@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://menus/death_scene.gd" type="Script" id=1]
+
+[node name="death_scene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 127.98
+margin_top = 18.9998
+margin_right = 184.98
+margin_bottom = 32.9998
+text = "You Died"
+
+[node name="exit_button" type="Button" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 235.525
+margin_top = 2.86789
+margin_right = 317.525
+margin_bottom = 22.8679
+text = "Quit Game"
+
+[node name="retry_button" type="Button" parent="."]
+margin_left = 122.961
+margin_top = 80.6594
+margin_right = 192.961
+margin_bottom = 100.659
+text = "Try Again"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="retry_button" to="." method="_on_retry_button_pressed"]
